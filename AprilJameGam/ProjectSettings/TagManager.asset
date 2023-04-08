@@ -41,15 +41,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: IBackground
+  - name: HUD
     uniqueID: 2701302689
-    locked: 0
-  - name: MidGround
-    uniqueID: 2262020071
-    locked: 0
-  - name: PlayerLayer
-    uniqueID: 3346513385
-    locked: 0
-  - name: Foreground
-    uniqueID: 3332525557
     locked: 0
