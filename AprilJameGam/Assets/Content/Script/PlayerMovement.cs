@@ -6,25 +6,44 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
 
-    public Rigidbody2D rb;
-    public Animator anim;
+    private Rigidbody2D rb;
+    private Animator anim;
 
-    Vector2 movement;
+    private Vector3 change;
 
-
-
-    void Update ()
+    void Start()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        anim.SetFloat("Horizontal", movement.x);
-        anim.SetFloat("Vertical", movement.y);
-        anim.SetFloat("Speed", movement.sqrMagnitude);
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        change = Vector3.zero;
+
+        change.x = Input.GetAxisRaw("Horizontal");
+        change.y = Input.GetAxisRaw("Vertical");
+        UpdateAnimAndMove();
+
     }
+    
+        void UpdateAnimAndMove()
+        {
+            if (change != Vector3.zero)
+            {
+                MoveCharacter();
+                anim.SetFloat("moveX", change.x);
+                anim.SetFloat("moveY", change.y);
+                anim.SetBool("moving", true);
+            }
+            else
+            {
+                anim.SetBool("moving", false);
+            }
+        }
+
+    void MoveCharacter()
+    {
+        rb.MovePosition(transform.position + change * moveSpeed * Time.fixedDeltaTime);
+    } 
 }

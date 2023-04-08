@@ -1,0 +1,27 @@
+{
+    "activeFile": "",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "Overworld.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.5
+        },
+        "untitled.tmx": {
+            "scale": 1,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 264.5,
+                "y": 370
+            }
+        }
+    },
+    "openFiles": [
+    ],
+    "project": "",
+    "recentFiles": [
+        "Overworld.tsx",
+        "untitled.tmx"
+    ]
+}
