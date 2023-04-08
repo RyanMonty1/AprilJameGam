@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Content/tut1/Title Scene.unity
-    guid: 6813269537fb31e4c8348c8cb4c2c286
+    path: Assets/Turnbased(Nope)/Scenes/Title.unity
+    guid: 3b8f8e07082f4d846a7467812f4671c9
   - enabled: 1
-    path: Assets/Content/tut1/CombatTest.unity
-    guid: 39c02675d0ddcbe4091cecd686442957
+    path: Assets/Turnbased(Nope)/Scenes/Town.unity
+    guid: e796de5cb067055499890c6dfd80e1a9
   - enabled: 1
-    path: Assets/Content/tut1/Battle.unity
-    guid: 9d9a84033d743f74b9eb344360ba4f3a
+    path: Assets/Turnbased(Nope)/Scenes/Battle.unity
+    guid: ce1bf2e19811fa2418df9231e4e4d3ec
   m_configObjects: {}
