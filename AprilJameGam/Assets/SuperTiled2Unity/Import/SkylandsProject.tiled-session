@@ -7,6 +7,7 @@
     "expandedProjectPaths": [
         "."
     ],
+    "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "Overworld.tsx": {
             "scaleInDock": 0.75,
@@ -16,11 +17,11 @@
             "expandedObjectLayers": [
                 8
             ],
-            "scale": 11,
-            "selectedLayer": 5,
+            "scale": 3,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 211.72727272727275,
-                "y": 115
+                "x": 165.16666666666663,
+                "y": 171
             }
         },
         "SkylandsDock.tmx": {
@@ -30,8 +31,30 @@
             "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 240.5,
-                "y": 240.5
+                "x": 423.5,
+                "y": 224
+            }
+        },
+        "SkylandsDungeon.tmx": {
+            "expandedObjectLayers": [
+                8
+            ],
+            "scale": 1.5,
+            "selectedLayer": 7,
+            "viewCenter": {
+                "x": 203,
+                "y": 264
+            }
+        },
+        "SkylandsHouse.tmx": {
+            "expandedObjectLayers": [
+                6
+            ],
+            "scale": 3,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 163.83333333333334,
+                "y": 253.33333333333331
             }
         }
     },

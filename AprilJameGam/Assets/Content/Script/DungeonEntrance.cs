@@ -1,10 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
+
 
 public class DungeonEntrance : MonoBehaviour
 {
     // The teleport point game object
     public GameObject teleportPoint;
+
+    public float fadeDuration = 1f;
+    public Image fadePanel;
 
     private bool playerInRange = false;
 
@@ -50,8 +56,34 @@ public class DungeonEntrance : MonoBehaviour
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            // Move the player game object to the teleport point's position
-            GameObject.FindGameObjectWithTag("Player").transform.position = teleportPoint.transform.position;
+            // Play the fade animation
+            StartCoroutine(FadeCoroutine());
+        }
+    }
+
+    IEnumerator FadeCoroutine()
+    {
+        // Fade in
+        float elapsed = 0;
+        while (elapsed < fadeDuration)
+        {
+            float alpha = Mathf.Lerp(0f, 1f, elapsed / fadeDuration);
+            fadePanel.color = new Color(0f, 0f, 0f, alpha);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // Move the player game object to the teleport point's position
+        GameObject.FindGameObjectWithTag("Player").transform.position = teleportPoint.transform.position;
+
+        // Fade out
+        elapsed = 0;
+        while (elapsed < fadeDuration)
+        {
+            float alpha = Mathf.Lerp(1f, 0f, elapsed / fadeDuration);
+            fadePanel.color = new Color(0f, 0f, 0f, alpha);
+            elapsed += Time.deltaTime;
+            yield return null;
         }
     }
 }
