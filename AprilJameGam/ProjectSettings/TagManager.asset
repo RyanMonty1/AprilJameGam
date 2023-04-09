@@ -4,10 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - EnemyUnit
-  - TargetEnemyUnit
-  - PlayerUnit
   - PlayerParty
+  - breakable
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -44,6 +43,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: PlayerInteraction
+    uniqueID: 1810736725
     locked: 0
   - name: Player
     uniqueID: 317759459

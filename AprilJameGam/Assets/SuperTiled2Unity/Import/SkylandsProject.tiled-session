@@ -36,14 +36,11 @@
             }
         },
         "SkylandsDungeon.tmx": {
-            "expandedObjectLayers": [
-                8
-            ],
-            "scale": 1.5,
-            "selectedLayer": 7,
+            "scale": 2,
+            "selectedLayer": 6,
             "viewCenter": {
-                "x": 203,
-                "y": 264
+                "x": 293.25,
+                "y": 267.5
             }
         },
         "SkylandsHouse.tmx": {
@@ -54,7 +51,7 @@
             "selectedLayer": 1,
             "viewCenter": {
                 "x": 163.83333333333334,
-                "y": 253.33333333333331
+                "y": 253
             }
         }
     },
