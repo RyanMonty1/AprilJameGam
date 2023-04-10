@@ -1770,8 +1770,8 @@ MonoBehaviour:
   teleportPoint: {fileID: 205992624}
   fadeDuration: 1.5
   fadePanel: {fileID: 1514643561}
-  cameraChangeMax: {x: 0, y: 0}
-  cameraChangeMin: {x: 0, y: 0}
+  cameraChangeMax: {x: 0, y: -40.5}
+  cameraChangeMin: {x: -9.51, y: -55.5}
 --- !u!61 &1074464630
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4348,8 +4348,8 @@ MonoBehaviour:
   teleportPoint: {fileID: 183143620}
   fadeDuration: 1.5
   fadePanel: {fileID: 1514643561}
-  cameraChangeMax: {x: 0, y: 0}
-  cameraChangeMin: {x: 0, y: 0}
+  cameraChangeMax: {x: 0, y: 40.5}
+  cameraChangeMin: {x: 9.51, y: 55.5}
 --- !u!61 &1963468741
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4843,11 +4843,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5676888445334414952, guid: 4f31dab2fa1afbc4ebd3237e37f8d7a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 69
+      value: 19.31
       objectReference: {fileID: 0}
     - target: {fileID: 5676888445334414952, guid: 4f31dab2fa1afbc4ebd3237e37f8d7a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.65
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5676888445334414952, guid: 4f31dab2fa1afbc4ebd3237e37f8d7a9, type: 3}
       propertyPath: m_LocalPosition.z
