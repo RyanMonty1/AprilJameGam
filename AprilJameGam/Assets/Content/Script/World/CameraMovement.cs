@@ -28,3 +28,4 @@ public class CameraMovement : MonoBehaviour
         }
     }
 }
+//Camera Script with bounding movement

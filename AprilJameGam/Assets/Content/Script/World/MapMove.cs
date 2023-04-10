@@ -14,6 +14,18 @@ public class MapMove : MonoBehaviour
 
     private bool playerInRange = false;
 
+    //Move the Camera
+    public Vector2 cameraChangeMax;
+    public Vector2 cameraChangeMin;
+
+    private CameraMovement camMove;
+
+    void Start()
+    {
+        //Get the Camera
+        camMove = Camera.main.GetComponent<CameraMovement>();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -75,6 +87,9 @@ public class MapMove : MonoBehaviour
 
         // Move the player game object to the teleport point's position
         GameObject.FindGameObjectWithTag("Player").transform.position = teleportPoint.transform.position;
+
+        camMove.maxPosition += cameraChangeMax;
+        camMove.minPosition += cameraChangeMin;
 
         // Fade out
         elapsed = 0;
