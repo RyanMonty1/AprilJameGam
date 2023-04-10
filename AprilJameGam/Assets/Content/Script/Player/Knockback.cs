@@ -6,42 +6,38 @@ public class Knockback : MonoBehaviour
 {
     public float thurst;
     public float knockTime;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float damage;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Enemy"))
+        if (col.gameObject.CompareTag("breakable") && this.gameObject.CompareTag("Player"))
         {
-            Rigidbody2D enemy = col.GetComponent<Rigidbody2D>();
-            if (enemy != null)
-            {
-                enemy.GetComponent<Enemy>().currentState = EnemyState.stagger;
-                Vector2 difference = enemy.transform.position - transform.position;
-                difference = difference.normalized * thurst;
-                enemy.AddForce(difference, ForceMode2D.Impulse);
-                StartCoroutine(KnockCo(enemy));
-            }
+            col.GetComponent<BreakObject>().Break();
         }
-    }
 
-    public IEnumerator KnockCo(Rigidbody2D enemy)
-    {
-        if (enemy != null)
+        if (col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("Player"))
         {
-            yield return new WaitForSeconds(knockTime);
-            enemy.velocity = Vector2.zero;
-            enemy.GetComponent<Enemy>().currentState = EnemyState.idle;
+            Rigidbody2D hit = col.GetComponent<Rigidbody2D>();
+            if (hit != null)
+            {
+                Vector2 difference = hit.transform.position - transform.position;
+                difference = difference.normalized * thurst;
+                hit.AddForce(difference, ForceMode2D.Impulse);
+
+                if (col.gameObject.CompareTag("Enemy") && col.isTrigger)
+                {
+                    hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
+                    col.GetComponent<Enemy>().Knock(hit, knockTime, damage);
+                }
+                if (col.CompareTag("Player"))
+                {
+                    if (col.GetComponent<PlayerMovement>().currentState != PlayerState.stagger)
+                    {
+                        hit.GetComponent<PlayerMovement>().currentState = PlayerState.stagger;
+                        col.GetComponent<PlayerMovement>().Knock(knockTime, damage);
+                    }
+                }
+            }
         }
     }
 }

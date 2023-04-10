@@ -17,11 +17,11 @@
             "expandedObjectLayers": [
                 8
             ],
-            "scale": 3,
-            "selectedLayer": 3,
+            "scale": 2,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 165.16666666666663,
-                "y": 171
+                "x": 228.25,
+                "y": 237
             }
         },
         "SkylandsDock.tmx": {
@@ -36,6 +36,9 @@
             }
         },
         "SkylandsDungeon.tmx": {
+            "expandedObjectLayers": [
+                15
+            ],
             "scale": 2,
             "selectedLayer": 6,
             "viewCenter": {
@@ -51,7 +54,7 @@
             "selectedLayer": 1,
             "viewCenter": {
                 "x": 163.83333333333334,
-                "y": 253
+                "y": 252.66666666666666
             }
         }
     },

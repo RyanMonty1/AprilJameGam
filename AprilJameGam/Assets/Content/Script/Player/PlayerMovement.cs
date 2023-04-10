@@ -5,7 +5,9 @@ using UnityEngine;
 public enum PlayerState { 
     walk,
     attack,
-    interact
+    interact,
+    stagger,
+    idle
 }
 
 public class PlayerMovement : MonoBehaviour
@@ -16,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private Vector3 change;
+
+    public FloatValue currentHealth;
+    public MySignal playerHealthSignal;
 
     void Start()
     {
@@ -33,11 +38,12 @@ public class PlayerMovement : MonoBehaviour
         change.y = Input.GetAxisRaw("Vertical");
 
 
-        if (Input.GetButtonDown("Fire1") && currentState != PlayerState.attack)
+        if (Input.GetButtonDown("Fire1") && currentState != PlayerState.attack
+            && currentState != PlayerState.stagger)
         {
             StartCoroutine(AttackCo());
-        } 
-        else if (currentState == PlayerState.walk)
+        }
+        else if (currentState == PlayerState.walk || currentState == PlayerState.idle)
         {
             UpdateAnimAndMove();
         }
@@ -73,5 +79,31 @@ public class PlayerMovement : MonoBehaviour
     {
         change.Normalize();
         rb.MovePosition(transform.position + change * moveSpeed * Time.fixedDeltaTime);
-    } 
+    }
+
+    public void Knock(float knockTime, float damage)
+    {
+        currentHealth.RunTimeValue -= damage;
+        playerHealthSignal.Raise();
+
+        if (currentHealth.RunTimeValue > 0)
+        {
+            StartCoroutine(KnockCo(knockTime));
+        }else
+        {
+            this.gameObject.SetActive(false);
+        }
+
+    }
+
+    public IEnumerator KnockCo(float knockTime)
+    {
+        if (rb != null)
+        {
+            yield return new WaitForSeconds(knockTime);
+            rb.velocity = Vector2.zero;
+            currentState = PlayerState.idle;
+            rb.velocity = Vector2.zero;
+        }
+    }
 }
