@@ -9,6 +9,7 @@ public class MapMove : MonoBehaviour
     // The teleport point game object
     public GameObject teleportPoint;
 
+    //UI Fadeout
     public float fadeDuration = 1f;
     public Image fadePanel;
 
@@ -19,6 +20,12 @@ public class MapMove : MonoBehaviour
     public Vector2 cameraChangeMin;
 
     private CameraMovement camMove;
+
+    //Place Names on teleport
+    public bool needText;
+    public string placeName;
+    public GameObject text;
+    public Text placeText;
 
     void Start()
     {
@@ -70,6 +77,8 @@ public class MapMove : MonoBehaviour
         {
             // Play the fade animation
             StartCoroutine(FadeCoroutine());
+            StartCoroutine(placeNameCo());
+
         }
     }
 
@@ -100,5 +109,16 @@ public class MapMove : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
+
+    }
+
+
+    private IEnumerator placeNameCo()
+    {
+        yield return new WaitForSeconds(1.5f);
+        text.SetActive(true);
+        placeText.text = placeName;
+        yield return new WaitForSeconds(4f);
+        text.SetActive(false);
     }
 }
