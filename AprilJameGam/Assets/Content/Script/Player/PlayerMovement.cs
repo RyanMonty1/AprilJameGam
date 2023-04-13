@@ -19,9 +19,13 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private Vector3 change;
 
+    //Player Health
     public FloatValue currentHealth;
     public MySignal playerHealthSignal;
 
+
+    public VectorValue startingPosition;
+    
     void Start()
     {
         currentState = PlayerState.walk;
@@ -29,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         anim.SetFloat("moveX", 0);
         anim.SetFloat("moveY", -1);
+        transform.position = startingPosition.initialValue;
     }
 
     void Update()

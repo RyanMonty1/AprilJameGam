@@ -1,40 +1,37 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System.Collections.Generic;
 
-
-public class MapMove : MonoBehaviour
+public class MapMove2 : MonoBehaviour
 {
+
     // The teleport point game object
     public GameObject teleportPoint;
 
-    //UI Fadeout (old)
-    public float fadeDuration = 1f;
-    public Image fadePanel;
-
     private bool playerInRange = false;
 
-    //Move the Camera
+    // Move the Camera
     public Vector2 cameraChangeMax;
     public Vector2 cameraChangeMin;
 
     private CameraMovement camMove;
 
-    //Place Names on teleport
+    // Place Names on teleport
     public bool needText;
     public string placeName;
     public GameObject text;
     public Text placeText;
 
+    // Prefab to spawn and destroy
+    public GameObject prefabToSpawn;
+
     void Start()
     {
-        //Get the Camera
+        // Get the Camera
         camMove = Camera.main.GetComponent<CameraMovement>();
     }
 
-
-    //InteractText > enable
+    // InteractText > enable
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -77,42 +74,19 @@ public class MapMove : MonoBehaviour
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            // Play the fade animation
-            StartCoroutine(FadeCoroutine());
-            //Start the PlaceName coroutine
+            // Spawn the prefab and wait for 1 second
+            GameObject spawnedPrefab = Instantiate(prefabToSpawn, transform.position, Quaternion.identity) as GameObject;
+            StartCoroutine(DestroyPrefabAfterDelay(spawnedPrefab, 1f));
+
+            // Start the PlaceName coroutine
             StartCoroutine(placeNameCo());
 
+            // Move the player game object to the teleport point's position
+            GameObject.FindGameObjectWithTag("Player").transform.position = teleportPoint.transform.position;
+
+            camMove.maxPosition += cameraChangeMax;
+            camMove.minPosition += cameraChangeMin;
         }
-    }
-    //Fade Old
-    IEnumerator FadeCoroutine()
-    {
-        // Fade in
-        float elapsed = 0;
-        while (elapsed < fadeDuration)
-        {
-            float alpha = Mathf.Lerp(0f, 1f, elapsed / fadeDuration);
-            fadePanel.color = new Color(0f, 0f, 0f, alpha);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        // Move the player game object to the teleport point's position
-        GameObject.FindGameObjectWithTag("Player").transform.position = teleportPoint.transform.position;
-
-        camMove.maxPosition += cameraChangeMax;
-        camMove.minPosition += cameraChangeMin;
-
-        // Fade out
-        elapsed = 0;
-        while (elapsed < fadeDuration)
-        {
-            float alpha = Mathf.Lerp(1f, 0f, elapsed / fadeDuration);
-            fadePanel.color = new Color(0f, 0f, 0f, alpha);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-
     }
 
     private IEnumerator placeNameCo()
@@ -122,5 +96,11 @@ public class MapMove : MonoBehaviour
         placeText.text = placeName;
         yield return new WaitForSeconds(4f);
         text.SetActive(false);
+    }
+
+    private IEnumerator DestroyPrefabAfterDelay(GameObject prefab, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(prefab);
     }
 }
