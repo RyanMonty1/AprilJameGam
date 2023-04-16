@@ -51,6 +51,7 @@ public class MapMove2 : MonoBehaviour
         }
     }
 
+    //Interact Text > Disable
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -81,11 +82,7 @@ public class MapMove2 : MonoBehaviour
             // Start the PlaceName coroutine
             StartCoroutine(placeNameCo());
 
-            // Move the player game object to the teleport point's position
-            GameObject.FindGameObjectWithTag("Player").transform.position = teleportPoint.transform.position;
-
-            camMove.maxPosition += cameraChangeMax;
-            camMove.minPosition += cameraChangeMin;
+            StartCoroutine(MovePlayer());
         }
     }
 
@@ -102,5 +99,15 @@ public class MapMove2 : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         Destroy(prefab);
+    }
+
+    private IEnumerator MovePlayer()
+    {
+        // Move the player game object to the teleport point's position
+        yield return new WaitForSeconds(0.3f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = teleportPoint.transform.position;
+
+        camMove.maxPosition += cameraChangeMax;
+        camMove.minPosition += cameraChangeMin;
     }
 }

@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class RoomMove : MonoBehaviour
 {
-    public Vector2 cameraChange;
+    public Vector2 cameraChangeMax;
+    public Vector2 cameraChangeMin;
+
     public Vector3 playerChange;
 
     private CameraMovement camMove;
@@ -32,8 +34,10 @@ public class RoomMove : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            camMove.maxPosition += cameraChange;
-            camMove.minPosition += cameraChange;
+
+            camMove.maxPosition += cameraChangeMax;
+            camMove.minPosition += cameraChangeMin;
+
             col.transform.position += playerChange;
             if (needText)
             {

@@ -1747,6 +1747,7 @@ GameObject:
   - component: {fileID: 1074464631}
   - component: {fileID: 1074464630}
   - component: {fileID: 1074464629}
+  - component: {fileID: 1074464633}
   m_Layer: 0
   m_Name: DungeonExitTrigger
   m_TagString: Untagged
@@ -1761,14 +1762,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074464628}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9b7900accb0a2642be1757579d975bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   teleportPoint: {fileID: 205992624}
-  fadeDuration: 1.5
-  fadePanel: {fileID: 1514643561}
+  fadeDuration: 1
+  fadePanel: {fileID: 0}
   cameraChangeMax: {x: 0, y: -40.5}
   cameraChangeMin: {x: -9.51, y: -55.5}
   needText: 1
@@ -1868,6 +1869,26 @@ Transform:
   m_Father: {fileID: 1460461271}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1074464633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074464628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24dddf20356ce4fd1bb3d81202d8b4aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportPoint: {fileID: 205992624}
+  cameraChangeMax: {x: 0, y: -40.5}
+  cameraChangeMin: {x: -9.51, y: -55.5}
+  needText: 1
+  placeName: Jeffs House
+  text: {fileID: 1847637270}
+  placeText: {fileID: 1847637271}
+  prefabToSpawn: {fileID: 2017186020310736073, guid: 93ac5b342e9104d1c991fcd26d2aa551, type: 3}
 --- !u!1 &1101972315
 GameObject:
   m_ObjectHideFlags: 0
@@ -2542,6 +2563,22 @@ PrefabInstance:
       propertyPath: playerChange.y
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5111254597926012236, guid: 59c7fe11a7468154daa3c320fdb7851e, type: 3}
+      propertyPath: cameraChangeMax.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111254597926012236, guid: 59c7fe11a7468154daa3c320fdb7851e, type: 3}
+      propertyPath: cameraChangeMax.y
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111254597926012236, guid: 59c7fe11a7468154daa3c320fdb7851e, type: 3}
+      propertyPath: cameraChangeMin.x
+      value: -17.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111254597926012236, guid: 59c7fe11a7468154daa3c320fdb7851e, type: 3}
+      propertyPath: cameraChangeMin.y
+      value: 27
+      objectReference: {fileID: 0}
     - target: {fileID: 5111254597926012237, guid: 59c7fe11a7468154daa3c320fdb7851e, type: 3}
       propertyPath: m_Size.y
       value: 0.2959442
@@ -2608,6 +2645,7 @@ GameObject:
   - component: {fileID: 1281457891}
   - component: {fileID: 1281457890}
   - component: {fileID: 1281457893}
+  - component: {fileID: 1281457894}
   m_Layer: 0
   m_Name: HouseEntranceTrigger
   m_TagString: Untagged
@@ -2715,20 +2753,40 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1281457888}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9b7900accb0a2642be1757579d975bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   teleportPoint: {fileID: 1927982127}
-  fadeDuration: 1.5
-  fadePanel: {fileID: 1514643561}
+  fadeDuration: 1
+  fadePanel: {fileID: 0}
   cameraChangeMax: {x: 31, y: -10.26}
   cameraChangeMin: {x: 59.4, y: 21.12}
   needText: 1
   placeName: LE INSIDE
   text: {fileID: 1847637270}
   placeText: {fileID: 1847637271}
+--- !u!114 &1281457894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281457888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24dddf20356ce4fd1bb3d81202d8b4aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportPoint: {fileID: 1927982127}
+  cameraChangeMax: {x: 31, y: -10.26}
+  cameraChangeMin: {x: 59.4, y: 21.12}
+  needText: 0
+  placeName: lgkhfjgdfxbvc
+  text: {fileID: 1847637270}
+  placeText: {fileID: 1847637271}
+  prefabToSpawn: {fileID: 2017186020310736073, guid: 93ac5b342e9104d1c991fcd26d2aa551, type: 3}
 --- !u!4 &1340540093 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7473694524634096627, guid: 709f40640371c5f4da855125cf484116, type: 3}
@@ -2831,7 +2889,6 @@ RectTransform:
   - {fileID: 6706941672351592942}
   - {fileID: 2069317112}
   - {fileID: 1847637274}
-  - {fileID: 1514643559}
   m_Father: {fileID: 1912449134}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3026,103 +3083,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -5272985065493949057, guid: 67fe375f5d2fd2f47af22aa4baa7f0c0, type: 3}
   m_PrefabInstance: {fileID: 1636558716}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1514643558
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1514643559}
-  - component: {fileID: 1514643562}
-  - component: {fileID: 1514643561}
-  - component: {fileID: 1514643563}
-  m_Layer: 5
-  m_Name: Fade
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1514643559
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514643558}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1368354014}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00024414, y: -0.0013733}
-  m_SizeDelta: {x: 1920, y: 1079.8}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1514643561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514643558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1514643562
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514643558}
-  m_CullTransparentMesh: 1
---- !u!95 &1514643563
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514643558}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 18ac3d10b2e02a045935a3ee27812a4a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1523742788
 GameObject:
   m_ObjectHideFlags: 0
@@ -3472,6 +3432,7 @@ GameObject:
   - component: {fileID: 1574033034}
   - component: {fileID: 1574033033}
   - component: {fileID: 1574033036}
+  - component: {fileID: 1574033037}
   m_Layer: 0
   m_Name: HouseExitTrigger
   m_TagString: Untagged
@@ -3579,20 +3540,40 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574033031}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9b7900accb0a2642be1757579d975bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   teleportPoint: {fileID: 1012192765}
-  fadeDuration: 1.5
-  fadePanel: {fileID: 1514643561}
+  fadeDuration: 1
+  fadePanel: {fileID: 0}
   cameraChangeMax: {x: -31, y: 10.26}
   cameraChangeMin: {x: -59.4, y: -21.12}
   needText: 1
   placeName: LE ISLAND
   text: {fileID: 1847637270}
   placeText: {fileID: 1847637271}
+--- !u!114 &1574033037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574033031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24dddf20356ce4fd1bb3d81202d8b4aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportPoint: {fileID: 1012192765}
+  cameraChangeMax: {x: -31, y: 10.26}
+  cameraChangeMin: {x: -59.4, y: -21.12}
+  needText: 0
+  placeName: ;liykutjyfhdgcvnbm
+  text: {fileID: 1847637270}
+  placeText: {fileID: 1847637271}
+  prefabToSpawn: {fileID: 2017186020310736073, guid: 93ac5b342e9104d1c991fcd26d2aa551, type: 3}
 --- !u!1 &1575396947
 GameObject:
   m_ObjectHideFlags: 0
@@ -4631,6 +4612,7 @@ GameObject:
   - component: {fileID: 1963468742}
   - component: {fileID: 1963468741}
   - component: {fileID: 1963468740}
+  - component: {fileID: 1963468744}
   m_Layer: 0
   m_Name: DungeonEntranceTrigger
   m_TagString: Untagged
@@ -4645,14 +4627,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963468739}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9b7900accb0a2642be1757579d975bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   teleportPoint: {fileID: 183143620}
-  fadeDuration: 1.5
-  fadePanel: {fileID: 1514643561}
+  fadeDuration: 1
+  fadePanel: {fileID: 0}
   cameraChangeMax: {x: 0, y: 40.5}
   cameraChangeMin: {x: 9.51, y: 55.5}
   needText: 1
@@ -4752,6 +4734,26 @@ Transform:
   m_Father: {fileID: 918101617}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.499}
+--- !u!114 &1963468744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963468739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24dddf20356ce4fd1bb3d81202d8b4aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportPoint: {fileID: 183143620}
+  cameraChangeMax: {x: 0, y: 40.5}
+  cameraChangeMin: {x: 9.51, y: 5.55}
+  needText: 0
+  placeName: Le Dungeon
+  text: {fileID: 1847637270}
+  placeText: {fileID: 1847637271}
+  prefabToSpawn: {fileID: 2017186020310736073, guid: 93ac5b342e9104d1c991fcd26d2aa551, type: 3}
 --- !u!1001 &1984547846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5025,6 +5027,22 @@ PrefabInstance:
       propertyPath: playerChange.y
       value: -3
       objectReference: {fileID: 0}
+    - target: {fileID: 5111254597926012236, guid: 59c7fe11a7468154daa3c320fdb7851e, type: 3}
+      propertyPath: cameraChangeMax.x
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111254597926012236, guid: 59c7fe11a7468154daa3c320fdb7851e, type: 3}
+      propertyPath: cameraChangeMax.y
+      value: -48
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111254597926012236, guid: 59c7fe11a7468154daa3c320fdb7851e, type: 3}
+      propertyPath: cameraChangeMin.x
+      value: 17.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111254597926012236, guid: 59c7fe11a7468154daa3c320fdb7851e, type: 3}
+      propertyPath: cameraChangeMin.y
+      value: -27
+      objectReference: {fileID: 0}
     - target: {fileID: 5111254597926012237, guid: 59c7fe11a7468154daa3c320fdb7851e, type: 3}
       propertyPath: m_Size.y
       value: 0.2959442
@@ -5157,11 +5175,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5676888445334414952, guid: 4f31dab2fa1afbc4ebd3237e37f8d7a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23
+      value: 27.2
       objectReference: {fileID: 0}
     - target: {fileID: 5676888445334414952, guid: 4f31dab2fa1afbc4ebd3237e37f8d7a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -23.5
+      value: -42.5
       objectReference: {fileID: 0}
     - target: {fileID: 5676888445334414952, guid: 4f31dab2fa1afbc4ebd3237e37f8d7a9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5213,19 +5231,19 @@ PrefabInstance:
       objectReference: {fileID: 1932556775}
     - target: {fileID: 5676888445334414958, guid: 4f31dab2fa1afbc4ebd3237e37f8d7a9, type: 3}
       propertyPath: maxPosition.x
-      value: 200
+      value: 27.2
       objectReference: {fileID: 0}
     - target: {fileID: 5676888445334414958, guid: 4f31dab2fa1afbc4ebd3237e37f8d7a9, type: 3}
       propertyPath: maxPosition.y
-      value: 200
+      value: -53.5
       objectReference: {fileID: 0}
     - target: {fileID: 5676888445334414958, guid: 4f31dab2fa1afbc4ebd3237e37f8d7a9, type: 3}
       propertyPath: minPosition.x
-      value: -200
+      value: 27.2
       objectReference: {fileID: 0}
     - target: {fileID: 5676888445334414958, guid: 4f31dab2fa1afbc4ebd3237e37f8d7a9, type: 3}
       propertyPath: minPosition.y
-      value: -200
+      value: -69.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f31dab2fa1afbc4ebd3237e37f8d7a9, type: 3}
@@ -5239,18 +5257,6 @@ PrefabInstance:
     - target: {fileID: 5874943371864243912, guid: 1e0ebc5c734274c7fae060ea6880f68a, type: 3}
       propertyPath: m_Name
       value: SceneTransition
-      objectReference: {fileID: 0}
-    - target: {fileID: 5874943371864243913, guid: 1e0ebc5c734274c7fae060ea6880f68a, type: 3}
-      propertyPath: sceneToLoad
-      value: Scene2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5874943371864243913, guid: 1e0ebc5c734274c7fae060ea6880f68a, type: 3}
-      propertyPath: playerPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5874943371864243913, guid: 1e0ebc5c734274c7fae060ea6880f68a, type: 3}
-      propertyPath: playerPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5874943371864243915, guid: 1e0ebc5c734274c7fae060ea6880f68a, type: 3}
       propertyPath: m_RootOrder
